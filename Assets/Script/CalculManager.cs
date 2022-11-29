@@ -25,7 +25,7 @@ public class CalculManager : MonoBehaviour
     {
         m_calculList = new List<List<int>>();
 
-        LevelThreeRandom();
+        LevelTwoRandom();
     }
 
     // Update is called once per frame
@@ -47,8 +47,11 @@ public class CalculManager : MonoBehaviour
         m_tuple.Add(firstNumber);
         m_tuple.Add(secondNumber);
 
-        m_calculList.Add(m_tuple);
-        m_tuple.Clear();
+        Debug.Log(firstNumber);
+
+        List<int> temp_tuple = m_tuple;
+
+        m_calculList.Add(temp_tuple);
 
         int sign = Random.Range(0, 1);
 
@@ -62,6 +65,11 @@ public class CalculManager : MonoBehaviour
             int answer = firstNumber - secondNumber;
             m_answerList.Add(answer);
         }
+
+        m_tuple.Remove(0);
+        m_tuple.Remove(1);
+
+        Debug.Log(m_calculList[0][0]);
     }
 
     void LevelTwoRandom()
@@ -69,22 +77,7 @@ public class CalculManager : MonoBehaviour
         int firstNumber = Random.Range(0, 20);
         int secondNumber = Random.Range(0, 20);
 
-        m_tuple.Add(firstNumber);
-        m_tuple.Add(secondNumber);
-
-        m_calculList.Add(m_tuple);
-        m_tuple.Clear();
-
-        int answer = firstNumber * secondNumber;
-        m_answerList.Add(answer);
-    }
-
-    void LevelThreeRandom()
-    {
-        int firstNumber = Random.Range(0, 1000);
-        int secondNumber = Random.Range(0, 50);
-
-        Debug.Log(m_tuple);
+        Debug.Log(firstNumber);
 
         m_tuple.Add(firstNumber);
         m_tuple.Add(secondNumber);
@@ -98,6 +91,31 @@ public class CalculManager : MonoBehaviour
 
         m_tuple.Remove(0);
         m_tuple.Remove(1);
+
+        Debug.Log(m_calculList[0][0]);
+    }
+
+    void LevelThreeRandom()
+    {
+        int firstNumber = Random.Range(0, 1000);
+        int secondNumber = Random.Range(0, 50);
+
+        Debug.Log(firstNumber);
+
+        m_tuple.Add(firstNumber);
+        m_tuple.Add(secondNumber);
+
+        List<int> temp_tuple = m_tuple;
+
+        m_calculList.Add(temp_tuple);
+
+        int answer = firstNumber * secondNumber;
+        m_answerList.Add(answer);
+
+        m_tuple.Remove(0);
+        m_tuple.Remove(1);
+
+        Debug.Log(m_calculList[0][0]);
     }
 
 
