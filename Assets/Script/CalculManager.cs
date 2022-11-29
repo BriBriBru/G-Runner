@@ -5,25 +5,27 @@ using UnityEngine;
 public class CalculManager : MonoBehaviour
 {
     [Header("Listes")]
-    [SerializeField] private List<List<int>> m_calculList;
     [SerializeField] private List<int> m_answerList;
-    private List<int> tupleNumber;
-    private List<int> m_fauteList;
+    public List<int> m_tuple;
+    public List<List<int>> m_calculList;
+    public  List<int> m_fauteList;
 
     [Header("Choice")]
     [SerializeField] private int m_choiceUser;
 
     [Header("Life")]
-    [SerializeField] GameObject m_lifeCount;
+    //[SerializeField] GameObject m_lifeCount;
 
     [Header("Other Variable")]
     [SerializeField] private int m_questionNumber = 0;
-    private int m_point = 0;
+    public int m_point = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_calculList = new List<List<int>>();
+
+        LevelThreeRandom();
     }
 
     // Update is called once per frame
@@ -42,11 +44,11 @@ public class CalculManager : MonoBehaviour
         int firstNumber = Random.Range(0,10);
         int secondNumber = Random.Range(0, 10);
 
-        tupleNumber.Add(firstNumber);
-        tupleNumber.Add(secondNumber);
+        m_tuple.Add(firstNumber);
+        m_tuple.Add(secondNumber);
 
-        m_calculList.Add(tupleNumber);
-        tupleNumber.Clear();
+        m_calculList.Add(m_tuple);
+        m_tuple.Clear();
 
         int sign = Random.Range(0, 1);
 
@@ -60,6 +62,42 @@ public class CalculManager : MonoBehaviour
             int answer = firstNumber - secondNumber;
             m_answerList.Add(answer);
         }
+    }
+
+    void LevelTwoRandom()
+    {
+        int firstNumber = Random.Range(0, 20);
+        int secondNumber = Random.Range(0, 20);
+
+        m_tuple.Add(firstNumber);
+        m_tuple.Add(secondNumber);
+
+        m_calculList.Add(m_tuple);
+        m_tuple.Clear();
+
+        int answer = firstNumber * secondNumber;
+        m_answerList.Add(answer);
+    }
+
+    void LevelThreeRandom()
+    {
+        int firstNumber = Random.Range(0, 1000);
+        int secondNumber = Random.Range(0, 50);
+
+        Debug.Log(m_tuple);
+
+        m_tuple.Add(firstNumber);
+        m_tuple.Add(secondNumber);
+
+        List<int> temp_tuple = m_tuple;
+
+        m_calculList.Add(temp_tuple);
+
+        int answer = firstNumber * secondNumber;
+        m_answerList.Add(answer);
+
+        m_tuple.Remove(0);
+        m_tuple.Remove(1);
     }
 
 
