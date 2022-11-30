@@ -13,3 +13,11 @@ MonoBehaviour:
   m_Name: Step1
   m_EditorClassIdentifier: 
   Question: 
+  Responses:
+  - responseSprite: {fileID: 0}
+    isCorrect: 0
+  - responseSprite: {fileID: 21300000, guid: d24e7e0b75e1a244bb9687d6fd4315ef, type: 3}
+    isCorrect: 1
+  - responseSprite: {fileID: 0}
+    isCorrect: 0
+  StepDifficulty: 2
