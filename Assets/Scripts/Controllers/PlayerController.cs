@@ -1,13 +1,27 @@
+using System.Collections;
 using UnityEngine;
+
+[System.Serializable]
+public enum SIDE
+{
+    LEFT,
+    MID,
+    RIGHT
+}
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private GameObject _leftPath;
-    [SerializeField] private GameObject _middlePath;
-    [SerializeField] private GameObject _rightPath;
+    [SerializeField] private SIDE side = SIDE.MID;
+    [SerializeField] private float _offsetBetweenPaths;
 
+    private Animator _animator;
     private Vector2 _startTouchPosition;
     private Vector2 _endTouchPosition;
+
+    void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -25,36 +39,37 @@ public class PlayerController : MonoBehaviour
             // Left swipe
             if (_endTouchPosition.x < _startTouchPosition.x)
             {
-                // If the caracter is on the right path
-                if (transform.position.x == _rightPath.transform.position.x)
+                if (side == SIDE.MID)
                 {
-                    transform.position = _middlePath.transform.position;
-                    Debug.Log("Right -> Middle");
+                    side = SIDE.LEFT;
+                    _animator.Play("Left Swipe");
+                    transform.Translate(-_offsetBetweenPaths * Time.deltaTime, 0f, 0f);
                 }
 
-                // If the caracter is on the middle path
-                else if (transform.position.x == _middlePath.transform.position.x)
+                else if (side == SIDE.RIGHT)
                 {
-                    transform.position = _leftPath.transform.position;
-                    Debug.Log("Middle -> Left");
+                    side = SIDE.MID;
+                    _animator.Play("Left Swipe");
+                    transform.Translate(-_offsetBetweenPaths * Time.deltaTime, 0f, 0f);
                 }
             }
 
             // Right swipe
             else if (_endTouchPosition.x > _startTouchPosition.x)
             {
-                // If the caracter is on the left path
-                if (transform.position.x == _leftPath.transform.position.x)
+                if (side == SIDE.MID)
                 {
-                    transform.position = _middlePath.transform.position;
-                    Debug.Log("Left -> Middle");
+                    side = SIDE.RIGHT;
+                    _animator.Play("Right Swipe");
+                    transform.Translate(_offsetBetweenPaths, 0f, 0f);
+
                 }
 
-                // If the caracter is on the middle path
-                else if (transform.position.x == _middlePath.transform.position.x)
+                else if (side == SIDE.LEFT)
                 {
-                    transform.position = _rightPath.transform.position;
-                    Debug.Log("Middle -> Right");
+                    side = SIDE.MID;
+                    _animator.Play("Right Swipe");
+                    transform.Translate(_offsetBetweenPaths, 0f, 0f);
                 }
             }
         }
