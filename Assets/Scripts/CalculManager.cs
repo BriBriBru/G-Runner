@@ -68,16 +68,12 @@ public class CalculManager : MonoBehaviour
 
         m_tuple.Remove(0);
         m_tuple.Remove(1);
-
-        Debug.Log(m_calculList[0][0]);
     }
 
     void LevelTwoRandom()
     {
         int firstNumber = Random.Range(0, 20);
         int secondNumber = Random.Range(0, 20);
-
-        Debug.Log(firstNumber);
 
         m_tuple.Add(firstNumber);
         m_tuple.Add(secondNumber);
@@ -91,8 +87,6 @@ public class CalculManager : MonoBehaviour
 
         m_tuple.Remove(0);
         m_tuple.Remove(1);
-
-        Debug.Log(m_calculList[0][0]);
     }
 
     void LevelThreeRandom()
@@ -114,8 +108,6 @@ public class CalculManager : MonoBehaviour
 
         m_tuple.Remove(0);
         m_tuple.Remove(1);
-
-        Debug.Log(m_calculList[0][0]);
     }
 
 

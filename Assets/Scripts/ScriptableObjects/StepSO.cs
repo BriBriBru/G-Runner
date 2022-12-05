@@ -11,7 +11,7 @@ public class StepSO : ScriptableObject
 }
 [System.Serializable]
 public class Response{
-    public Sprite responseSprite;
+    public string responseString;
     public bool isCorrect;
 }
 
