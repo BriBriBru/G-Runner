@@ -48,10 +48,15 @@ public class PlayerController : MonoBehaviour
                 if (side == SIDE.MID)
                 {
                     side = SIDE.LEFT;
-                    _animator.SetTrigger("Left Swipe");
+                    
                     // transform.Translate(Vector3.right * _offsetBetweenPaths);
                     //transform.position = _leftPath.transform.position;
-                    SmoothLerp(0.3f);
+                    // SmoothLerp(0.3f);
+                    Debug.Log("Left Swipe");
+                    _animator.SetTrigger("Left Swipe");
+                    _animator.enabled = false;
+                    SmoothLerp(1f);
+                    //_animator.enabled = true;
                 }
 
                 else if (side == SIDE.RIGHT)
@@ -79,6 +84,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private IEnumerator ApplyDelay(float delay)
+    {
+        Debug.Log("Call");
+        yield return new WaitForSeconds(0.1f);
+    }
+
     // Fonction qui s'exécute au fil du temps
     private IEnumerator SmoothLerp(float time)
     {
@@ -90,6 +101,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
             elapsedTime += Time.deltaTime;
+            
             yield return null;
         }
     }
