@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 [System.Serializable]
@@ -12,21 +11,23 @@ public enum SIDE
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private SIDE side = SIDE.MID;
-    [SerializeField] private float _offsetBetweenPaths;
     [SerializeField] private GameObject _leftPath;
     [SerializeField] private GameObject _middlePath;
     [SerializeField] private GameObject _rightPath;
-    private float _newXAxisPosition = 0f;
-    private CharacterController _characterController;
 
     private Animator _animator;
     private Vector2 _startTouchPosition;
     private Vector2 _endTouchPosition;
+    private Vector3 _leftPathPos;
+    private Vector3 _middlePathPos;
+    private Vector3 _rightPathPos;
 
     void Start()
     {
         _animator = GetComponent<Animator>();
-        _characterController = GetComponent<CharacterController>();
+        _leftPathPos = new Vector3(_leftPath.transform.position.x, _leftPath.transform.position.y, 0f);
+        _middlePathPos = new Vector3(_middlePath.transform.position.x, _middlePath.transform.position.y, 0f);
+        _rightPathPos = new Vector3(_rightPath.transform.position.x, _rightPath.transform.position.y, 0f);
     }
 
     void Update()
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
             _endTouchPosition = Input.GetTouch(0).position;
+            _animator.enabled = false;
 
             // Left swipe
             if (_endTouchPosition.x < _startTouchPosition.x)
@@ -48,21 +50,13 @@ public class PlayerController : MonoBehaviour
                 if (side == SIDE.MID)
                 {
                     side = SIDE.LEFT;
-                    
-                    // transform.Translate(Vector3.right * _offsetBetweenPaths);
-                    //transform.position = _leftPath.transform.position;
-                    // SmoothLerp(0.3f);
-                    Debug.Log("Left Swipe");
-                    _animator.SetTrigger("Left Swipe");
-                    _animator.enabled = false;
-                    SmoothLerp(1f);
-                    //_animator.enabled = true;
+                    transform.position = _leftPathPos;
                 }
 
                 else if (side == SIDE.RIGHT)
                 {
                     side = SIDE.MID;
-                    transform.position = _middlePath.transform.position;
+                    transform.position = _middlePathPos;
                 }
             }
 
@@ -72,37 +66,15 @@ public class PlayerController : MonoBehaviour
                 if (side == SIDE.MID)
                 {
                     side = SIDE.RIGHT;
-                    transform.position = _rightPath.transform.position;
+                    transform.position = _rightPathPos;
                 }
 
                 else if (side == SIDE.LEFT)
                 {
                     side = SIDE.MID;
-                    transform.position = _middlePath.transform.position;
+                    transform.position = _middlePathPos;
                 }
             }
-        }
-    }
-
-    private IEnumerator ApplyDelay(float delay)
-    {
-        Debug.Log("Call");
-        yield return new WaitForSeconds(0.1f);
-    }
-
-    // Fonction qui s'exécute au fil du temps
-    private IEnumerator SmoothLerp(float time)
-    {
-        Vector3 startingPos = transform.position;
-        Vector3 finalPos = transform.position + (transform.forward * 5);
-        float elapsedTime = 0;
-
-        while (elapsedTime < time)
-        {
-            transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
-            elapsedTime += Time.deltaTime;
-            
-            yield return null;
         }
     }
 }
