@@ -76,5 +76,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        _animator.enabled = true;
     }
 }
