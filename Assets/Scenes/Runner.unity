@@ -266,6 +266,7 @@ MonoBehaviour:
   m_listHard: 
   m_finishCanvas: {fileID: 1085807419}
   m_finishText: {fileID: 1880309088}
+  m_player: {fileID: 1568153914}
 --- !u!4 &143296778
 Transform:
   m_ObjectHideFlags: 0
@@ -2032,6 +2033,7 @@ MonoBehaviour:
   m_life: {fileID: 1336417407}
   m_finishCanvas: {fileID: 1085807419}
   m_finishText: {fileID: 1880309088}
+  m_alive: 1
 --- !u!54 &1568153915
 Rigidbody:
   m_ObjectHideFlags: 0

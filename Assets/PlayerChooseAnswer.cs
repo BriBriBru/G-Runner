@@ -8,14 +8,12 @@ public class PlayerChooseAnswer : MonoBehaviour
 {
     [SerializeField] private QuestionManager m_questionManager;
     [SerializeField] private TextMeshProUGUI m_scoreText;
-    [SerializeField] private GameObject m_life;
     [SerializeField] private GameObject m_finishCanvas;
     [SerializeField] private TextMeshProUGUI m_finishText;
 
     public bool m_alive = true;
 
     private int m_score = 0;
-    private int m_fail = 0;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,23 +27,7 @@ public class PlayerChooseAnswer : MonoBehaviour
             }
             else
             {
-                m_fail += 1;
-
-                if(m_fail == 1)
-                {
-                    m_life.transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(0,0,0, 50);
-                }
-                else if (m_fail == 2)
-                {
-                    m_life.transform.GetChild(1).gameObject.GetComponent<Image>().color = new Color(0, 0, 0, 50);
-                }
-                else
-                {
-                    m_life.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(0, 0, 0, 50);
-                    m_finishCanvas.SetActive(true);
-                    m_finishText.text = "You loose all your lives";
-                    m_alive = false;
-                }
+                m_alive = false;
             }
 
             Destroy(other.transform.parent.gameObject);
