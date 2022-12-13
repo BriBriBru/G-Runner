@@ -12,6 +12,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private List<int> m_listHard;
     [SerializeField] private GameObject m_finishCanvas;
     [SerializeField] private TextMeshProUGUI m_finishText;
+    [SerializeField] private PlayerChooseAnswer m_player;
 
     void Start()
     {
@@ -22,60 +23,63 @@ public class QuestionManager : MonoBehaviour
 
     public void FillQuestion(Difficulty difficulty)
     {
-        if(difficulty == Difficulty.easy)
+        if(m_player.m_alive != false)
         {
-            if(m_listEasy.Count != 0)
+            if (difficulty == Difficulty.easy)
             {
-                int tempInt = Random.Range(1, m_listEasy.Count);
+                if (m_listEasy.Count != 0)
+                {
+                    int tempInt = Random.Range(1, m_listEasy.Count);
 
-                m_data = Resources.Load("ScriptablesObjects/Easy/StepEasy" + tempInt.ToString()) as StepSO;
+                    m_data = Resources.Load("ScriptablesObjects/Easy/StepEasy" + tempInt.ToString()) as StepSO;
 
-                m_listEasy.Remove(tempInt);
+                    m_listEasy.Remove(tempInt);
+                }
+                else
+                {
+                    difficulty = Difficulty.medium;
+                }
             }
-            else
+
+            if (difficulty == Difficulty.medium)
             {
-                difficulty = Difficulty.medium;
+                if (m_listMedium.Count != 0)
+                {
+                    int tempInt = Random.Range(1, m_listMedium.Count);
+
+                    m_data = Resources.Load("ScriptablesObjects/Medium/StepMedium" + tempInt.ToString()) as StepSO;
+
+                    m_listMedium.Remove(tempInt);
+                }
+                else
+                {
+                    difficulty = Difficulty.hard;
+                }
             }
+
+            if (difficulty == Difficulty.hard)
+            {
+                if (m_listHard.Count != 0)
+                {
+                    int tempInt = Random.Range(1, m_listHard.Count);
+
+                    m_data = Resources.Load("ScriptablesObjects/Hard/StepHard" + tempInt.ToString()) as StepSO;
+
+                    m_listHard.Remove(tempInt);
+                }
+                else
+                {
+                    m_finishCanvas.SetActive(true);
+                    m_finishText.text = "You succeed all the question";
+                }
+            }
+
+            GameObject newQuestion = Instantiate(m_question);
+
+            newQuestion.GetComponent<QuestoinRepartition>().m_questionText = m_textForQuestion;
+
+            newQuestion.GetComponent<QuestoinRepartition>().FillQuestion(m_data);
         }
-        
-        if (difficulty == Difficulty.medium)
-        {
-            if(m_listMedium.Count != 0)
-            {
-                int tempInt = Random.Range(1, m_listMedium.Count);
-
-                m_data = Resources.Load("ScriptablesObjects/Medium/StepMedium" + tempInt.ToString()) as StepSO;
-
-                m_listMedium.Remove(tempInt);
-            }
-            else
-            {
-                difficulty = Difficulty.hard;
-            }
-        }
-        
-        if (difficulty == Difficulty.hard)
-        {
-            if (m_listHard.Count != 0)
-            {
-                int tempInt = Random.Range(1, m_listHard.Count);
-
-                m_data = Resources.Load("ScriptablesObjects/Hard/StepHard" + tempInt.ToString()) as StepSO;
-
-                m_listHard.Remove(tempInt);
-            }
-            else
-            {
-                m_finishCanvas.SetActive(true);
-                m_finishText.text = "You succeed all the question";
-            }
-        }
-
-        GameObject newQuestion = Instantiate(m_question);
-
-        newQuestion.GetComponent<QuestoinRepartition>().m_questionText = m_textForQuestion;
-
-        newQuestion.GetComponent<QuestoinRepartition>().FillQuestion(m_data);
     }
 
     public void FillListOfQuestion()

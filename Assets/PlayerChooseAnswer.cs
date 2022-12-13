@@ -12,6 +12,8 @@ public class PlayerChooseAnswer : MonoBehaviour
     [SerializeField] private GameObject m_finishCanvas;
     [SerializeField] private TextMeshProUGUI m_finishText;
 
+    public bool m_alive = true;
+
     private int m_score = 0;
     private int m_fail = 0;
 
@@ -42,6 +44,7 @@ public class PlayerChooseAnswer : MonoBehaviour
                     m_life.transform.GetChild(0).gameObject.GetComponent<Image>().color = new Color(0, 0, 0, 50);
                     m_finishCanvas.SetActive(true);
                     m_finishText.text = "You loose all your lives";
+                    m_alive = false;
                 }
             }
 
