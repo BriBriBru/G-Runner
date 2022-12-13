@@ -6,7 +6,7 @@ using UnityEngine;
 public class CubeAnswer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-    private bool m_isCorect;
+    public bool m_isCorect;
 
     // Start is called before the first frame update
     void Start()

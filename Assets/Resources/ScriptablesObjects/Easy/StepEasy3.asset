@@ -15,9 +15,9 @@ MonoBehaviour:
   Question: 3
   Responses:
   - responseString: Rouge
-    isCorrect: 0
-  - responseString: Bleu
     isCorrect: 1
+  - responseString: Bleu
+    isCorrect: 0
   - responseString: Vert
     isCorrect: 0
   StepDifficulty: 2

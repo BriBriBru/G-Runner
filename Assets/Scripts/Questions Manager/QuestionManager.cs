@@ -10,6 +10,8 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private List<int> m_listEasy;
     [SerializeField] private List<int> m_listMedium;
     [SerializeField] private List<int> m_listHard;
+    [SerializeField] private GameObject m_finishCanvas;
+    [SerializeField] private TextMeshProUGUI m_finishText;
 
     void Start()
     {
@@ -22,27 +24,51 @@ public class QuestionManager : MonoBehaviour
     {
         if(difficulty == Difficulty.easy)
         {
-            int tempInt = Random.Range(1, m_listEasy.Count);
+            if(m_listEasy.Count != 0)
+            {
+                int tempInt = Random.Range(1, m_listEasy.Count);
 
-            m_data = Resources.Load("ScriptablesObjects/Easy/StepEasy" + tempInt.ToString()) as StepSO;
+                m_data = Resources.Load("ScriptablesObjects/Easy/StepEasy" + tempInt.ToString()) as StepSO;
 
-            m_listEasy.Remove(tempInt);
+                m_listEasy.Remove(tempInt);
+            }
+            else
+            {
+                difficulty = Difficulty.medium;
+            }
         }
-        else if (difficulty == Difficulty.medium)
+        
+        if (difficulty == Difficulty.medium)
         {
-            int tempInt = Random.Range(1, m_listMedium.Count);
+            if(m_listMedium.Count != 0)
+            {
+                int tempInt = Random.Range(1, m_listMedium.Count);
 
-            m_data = Resources.Load("ScriptablesObjects/Medium/StepMedium" + tempInt.ToString()) as StepSO;
+                m_data = Resources.Load("ScriptablesObjects/Medium/StepMedium" + tempInt.ToString()) as StepSO;
 
-            m_listMedium.Remove(tempInt);
+                m_listMedium.Remove(tempInt);
+            }
+            else
+            {
+                difficulty = Difficulty.hard;
+            }
         }
-        else if (difficulty == Difficulty.hard)
+        
+        if (difficulty == Difficulty.hard)
         {
-            int tempInt = Random.Range(1, m_listHard.Count);
+            if (m_listHard.Count != 0)
+            {
+                int tempInt = Random.Range(1, m_listHard.Count);
 
-            m_data = Resources.Load("ScriptablesObjects/Hard/StepHard" + tempInt.ToString()) as StepSO;
+                m_data = Resources.Load("ScriptablesObjects/Hard/StepHard" + tempInt.ToString()) as StepSO;
 
-            m_listHard.Remove(tempInt);
+                m_listHard.Remove(tempInt);
+            }
+            else
+            {
+                m_finishCanvas.SetActive(true);
+                m_finishText.text = "You succeed all the question";
+            }
         }
 
         GameObject newQuestion = Instantiate(m_question);
