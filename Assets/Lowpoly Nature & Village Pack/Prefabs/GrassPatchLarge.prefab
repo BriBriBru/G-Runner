@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 4266128573505432}
   - component: {fileID: 33873917548954788}
   - component: {fileID: 23792509294186084}
-  - component: {fileID: 64750412500470412}
+  - component: {fileID: -118590196737182256}
+  - component: {fileID: -3865829916607570455}
   m_Layer: 0
   m_Name: GrassPatchLarge
-  m_TagString: Untagged
+  m_TagString: Scenery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64750412500470412
-MeshCollider:
+--- !u!65 &-118590196737182256
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +95,19 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 53faa61bc69771c4a8a13d86799fbedb, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.20830919, y: 0.26173687, z: 0.035286285}
+  m_Center: {x: -0.011448853, y: -0.11513498, z: 0.007643142}
+--- !u!114 &-3865829916607570455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569831446089662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ef930d53307db488b0c2f6e8304e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _translationSpeed: 10

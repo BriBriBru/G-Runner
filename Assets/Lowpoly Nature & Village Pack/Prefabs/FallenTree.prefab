@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 4025713376117910}
   - component: {fileID: 33595933986743170}
   - component: {fileID: 23157881126488098}
-  - component: {fileID: 64398970193751758}
+  - component: {fileID: -5080049954817203994}
+  - component: {fileID: -5082188876329706944}
   m_Layer: 0
   m_Name: FallenTree
-  m_TagString: Untagged
+  m_TagString: Scenery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64398970193751758
-MeshCollider:
+--- !u!65 &-5080049954817203994
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +95,19 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 27eb9b9293de10a47bcbb1cbdf726d3c, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.024253555, y: 0.024253555, z: 0.04532338}
+  m_Center: {x: 0, y: 0, z: 0.012661691}
+--- !u!114 &-5082188876329706944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740448909315622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ef930d53307db488b0c2f6e8304e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _translationSpeed: 10

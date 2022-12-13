@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.IO;
-using UnityEditor;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -14,18 +11,11 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private List<int> m_listMedium;
     [SerializeField] private List<int> m_listHard;
 
-    // Start is called before the first frame update
     void Start()
     {
         FillListOfQuestion();
 
         FillQuestion(Difficulty.easy);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void FillQuestion(Difficulty difficulty)
