@@ -34,6 +34,12 @@ public class QuestionManager : MonoBehaviour
                     m_data = Resources.Load("ScriptablesObjects/Easy/StepEasy" + tempInt.ToString()) as StepSO;
 
                     m_listEasy.Remove(tempInt);
+
+                    GameObject newQuestion = Instantiate(m_question);
+
+                    newQuestion.GetComponent<QuestoinRepartition>().m_questionText = m_textForQuestion;
+
+                    newQuestion.GetComponent<QuestoinRepartition>().FillQuestion(m_data);
                 }
                 else
                 {
@@ -50,6 +56,12 @@ public class QuestionManager : MonoBehaviour
                     m_data = Resources.Load("ScriptablesObjects/Medium/StepMedium" + tempInt.ToString()) as StepSO;
 
                     m_listMedium.Remove(tempInt);
+
+                    GameObject newQuestion = Instantiate(m_question);
+
+                    newQuestion.GetComponent<QuestoinRepartition>().m_questionText = m_textForQuestion;
+
+                    newQuestion.GetComponent<QuestoinRepartition>().FillQuestion(m_data);
                 }
                 else
                 {
@@ -66,19 +78,20 @@ public class QuestionManager : MonoBehaviour
                     m_data = Resources.Load("ScriptablesObjects/Hard/StepHard" + tempInt.ToString()) as StepSO;
 
                     m_listHard.Remove(tempInt);
+
+                    GameObject newQuestion = Instantiate(m_question);
+
+                    newQuestion.GetComponent<QuestoinRepartition>().m_questionText = m_textForQuestion;
+
+                    newQuestion.GetComponent<QuestoinRepartition>().FillQuestion(m_data);
                 }
                 else
                 {
                     m_finishCanvas.SetActive(true);
                     m_finishText.text = "You succeed all the question";
+                    
                 }
             }
-
-            GameObject newQuestion = Instantiate(m_question);
-
-            newQuestion.GetComponent<QuestoinRepartition>().m_questionText = m_textForQuestion;
-
-            newQuestion.GetComponent<QuestoinRepartition>().FillQuestion(m_data);
         }
     }
 
