@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepMedium3
   m_EditorClassIdentifier: 
-  Question: 3
+  Question: L'actuel patron de Twitter
   Responses:
-  - responseString: Rouge
+  - responseString: Mark Zuckerberg
     isCorrect: 0
-  - responseString: Bleu
+  - responseString: Jeff Bezos
+    isCorrect: 0
+  - responseString: Elon Musk
     isCorrect: 1
-  - responseString: Vert
-    isCorrect: 0
-  StepDifficulty: 2
+  StepDifficulty: 1

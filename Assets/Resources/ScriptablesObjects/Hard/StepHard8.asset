@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepHard8
   m_EditorClassIdentifier: 
-  Question: 8
+  Question: "Je n'ai plus d'id\xE9e"
   Responses:
-  - responseString: Rouge
-    isCorrect: 0
-  - responseString: Bleu
+  - responseString: Le vrai
     isCorrect: 1
-  - responseString: Vert
+  - responseString: Le faux
+    isCorrect: 0
+  - responseString: Le faux 2
     isCorrect: 0
   StepDifficulty: 2

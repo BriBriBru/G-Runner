@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepMedium2
   m_EditorClassIdentifier: 
-  Question: 2
+  Question: Date de la 1er guerre mondial
   Responses:
-  - responseString: Rouge
-    isCorrect: 0
-  - responseString: Bleu
+  - responseString: 1914-18
     isCorrect: 1
-  - responseString: Vert
+  - responseString: 1939-45
     isCorrect: 0
-  StepDifficulty: 2
+  - responseString: 91-2001
+    isCorrect: 0
+  StepDifficulty: 1

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepHard4
   m_EditorClassIdentifier: 
-  Question: 4
+  Question: L'air d'un cercle
   Responses:
-  - responseString: Rouge
-    isCorrect: 0
-  - responseString: Bleu
+  - responseString: "\u03C0R\xB2"
     isCorrect: 1
-  - responseString: Vert
+  - responseString: "4\u03C0R\xB2"
+    isCorrect: 0
+  - responseString: "2\u03C0"
     isCorrect: 0
   StepDifficulty: 2

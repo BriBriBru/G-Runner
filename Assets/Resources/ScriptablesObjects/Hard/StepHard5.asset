@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepHard5
   m_EditorClassIdentifier: 
-  Question: 5
+  Question: "Le Game Award de cette ann\xE9e"
   Responses:
-  - responseString: Rouge
+  - responseString: Marvel Snap
     isCorrect: 0
-  - responseString: Bleu
+  - responseString: God of War
+    isCorrect: 0
+  - responseString: Elden Ring
     isCorrect: 1
-  - responseString: Vert
-    isCorrect: 0
   StepDifficulty: 2

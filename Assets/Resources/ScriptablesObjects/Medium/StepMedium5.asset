@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepMedium5
   m_EditorClassIdentifier: 
-  Question: 5
+  Question: "Quelle temp\xE9rature l'\xE9tat nous demande de mettre chez nous"
   Responses:
-  - responseString: Rouge
+  - responseString: 24
     isCorrect: 0
-  - responseString: Bleu
+  - responseString: 12
+    isCorrect: 0
+  - responseString: 19
     isCorrect: 1
-  - responseString: Vert
-    isCorrect: 0
-  StepDifficulty: 2
+  StepDifficulty: 1

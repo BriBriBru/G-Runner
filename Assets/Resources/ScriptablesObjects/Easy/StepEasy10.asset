@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepEasy10
   m_EditorClassIdentifier: 
-  Question: 8
+  Question: Les antibiotiques c'est pas
   Responses:
-  - responseString: Rouge
+  - responseString: La joie
+    isCorrect: 0
+  - responseString: automatique
     isCorrect: 1
-  - responseString: Bleu
+  - responseString: antibiotique
     isCorrect: 0
-  - responseString: Vert
-    isCorrect: 0
-  StepDifficulty: 2
+  StepDifficulty: 0

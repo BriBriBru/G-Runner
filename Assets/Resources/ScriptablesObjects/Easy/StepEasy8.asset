@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepEasy8
   m_EditorClassIdentifier: 
-  Question: 8
+  Question: "Celui qui a \xE9crit les fables de la fontaine"
   Responses:
-  - responseString: Rouge
+  - responseString: La fontaine
     isCorrect: 1
-  - responseString: Bleu
+  - responseString: Nitzsche
     isCorrect: 0
-  - responseString: Vert
+  - responseString: "Jean Herv\xE9"
     isCorrect: 0
-  StepDifficulty: 2
+  StepDifficulty: 0

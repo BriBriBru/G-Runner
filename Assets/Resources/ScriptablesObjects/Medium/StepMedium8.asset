@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepMedium8
   m_EditorClassIdentifier: 
-  Question: 8
+  Question: Oeuvre de Victor Hugo
   Responses:
-  - responseString: Rouge
+  - responseString: La Peste
     isCorrect: 0
-  - responseString: Bleu
+  - responseString: Boule de Suif
+    isCorrect: 0
+  - responseString: Notre Dame de Paris
     isCorrect: 1
-  - responseString: Vert
-    isCorrect: 0
-  StepDifficulty: 2
+  StepDifficulty: 1

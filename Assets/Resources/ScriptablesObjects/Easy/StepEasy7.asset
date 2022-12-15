@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepEasy7
   m_EditorClassIdentifier: 
-  Question: 7
+  Question: Que veut dire COD
   Responses:
-  - responseString: Rouge
+  - responseString: Call of Duty
+    isCorrect: 0
+  - responseString: "Compl\xE9ment d'Objet Direct"
     isCorrect: 1
-  - responseString: Bleu
+  - responseString: Cash On Delivery
     isCorrect: 0
-  - responseString: Vert
-    isCorrect: 0
-  StepDifficulty: 2
+  StepDifficulty: 0

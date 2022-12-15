@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepMedium4
   m_EditorClassIdentifier: 
-  Question: 4
+  Question: Je pense donc je suis
   Responses:
-  - responseString: Rouge
+  - responseString: Diderot
     isCorrect: 0
-  - responseString: Bleu
+  - responseString: Descartes
     isCorrect: 1
-  - responseString: Vert
+  - responseString: Kantes
     isCorrect: 0
-  StepDifficulty: 2
+  StepDifficulty: 1

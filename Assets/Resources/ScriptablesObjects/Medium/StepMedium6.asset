@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepMedium6
   m_EditorClassIdentifier: 
-  Question: 6
+  Question: Le plus petit atome
   Responses:
-  - responseString: Rouge
+  - responseString: "h\xE9lium"
     isCorrect: 0
-  - responseString: Bleu
+  - responseString: "hydrog\xE8ne"
     isCorrect: 1
-  - responseString: Vert
+  - responseString: neutron
     isCorrect: 0
-  StepDifficulty: 2
+  StepDifficulty: 1

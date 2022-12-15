@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepHard2
   m_EditorClassIdentifier: 
-  Question: 2
+  Question: Le pays du soleil levant
   Responses:
-  - responseString: Rouge
+  - responseString: Vietnam
     isCorrect: 0
-  - responseString: Bleu
+  - responseString: "Cor\xE9e"
+    isCorrect: 0
+  - responseString: Japon
     isCorrect: 1
-  - responseString: Vert
-    isCorrect: 0
   StepDifficulty: 2

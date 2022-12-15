@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepEasy6
   m_EditorClassIdentifier: 
-  Question: 6
+  Question: "L'Antarctique est situ\xE9e au"
   Responses:
-  - responseString: Rouge
+  - responseString: Nord
     isCorrect: 1
-  - responseString: Bleu
+  - responseString: Sud
     isCorrect: 0
-  - responseString: Vert
+  - responseString: Milieu
     isCorrect: 0
-  StepDifficulty: 2
+  StepDifficulty: 0

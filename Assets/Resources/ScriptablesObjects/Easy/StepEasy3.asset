@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepEasy3
   m_EditorClassIdentifier: 
-  Question: 3
+  Question: "plan\xE8te entre V\xE9nus et Mars"
   Responses:
-  - responseString: Rouge
+  - responseString: Saturne
+    isCorrect: 0
+  - responseString: La Terre
     isCorrect: 1
-  - responseString: Bleu
+  - responseString: Neptune
     isCorrect: 0
-  - responseString: Vert
-    isCorrect: 0
-  StepDifficulty: 2
+  StepDifficulty: 0
