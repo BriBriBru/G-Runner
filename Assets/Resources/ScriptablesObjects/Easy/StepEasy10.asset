@@ -16,8 +16,8 @@ MonoBehaviour:
   Responses:
   - responseString: La joie
     isCorrect: 0
-  - responseString: automatique
+  - responseString: Automatique
     isCorrect: 1
-  - responseString: antibiotique
+  - responseString: Antibiotique
     isCorrect: 0
   StepDifficulty: 0
