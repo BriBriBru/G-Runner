@@ -31,9 +31,9 @@ public class QuestionManager : MonoBehaviour
                 {
                     int tempInt = Random.Range(1, m_listEasy.Count);
 
-                    m_data = Resources.Load("ScriptablesObjects/Easy/StepEasy" +  3.ToString()  /*tempInt.ToString()*/) as StepSO;
+                    m_data = Resources.Load("ScriptablesObjects/Easy/StepEasy" + m_listEasy[tempInt].ToString()) as StepSO;
 
-                    m_listEasy.Remove(tempInt);
+                    m_listEasy.Remove(m_listEasy[tempInt]);
 
                     GameObject newQuestion = Instantiate(m_question);
 
@@ -53,9 +53,9 @@ public class QuestionManager : MonoBehaviour
                 {
                     int tempInt = Random.Range(1, m_listMedium.Count);
 
-                    m_data = Resources.Load("ScriptablesObjects/Medium/StepMedium" + tempInt.ToString()) as StepSO;
+                    m_data = Resources.Load("ScriptablesObjects/Medium/StepMedium" + m_listMedium[tempInt].ToString()) as StepSO;
 
-                    m_listMedium.Remove(tempInt);
+                    m_listMedium.Remove(m_listMedium[tempInt]);
 
                     GameObject newQuestion = Instantiate(m_question);
 
@@ -75,9 +75,9 @@ public class QuestionManager : MonoBehaviour
                 {
                     int tempInt = Random.Range(1, m_listHard.Count);
 
-                    m_data = Resources.Load("ScriptablesObjects/Hard/StepHard" + tempInt.ToString()) as StepSO;
+                    m_data = Resources.Load("ScriptablesObjects/Hard/StepHard" + m_listHard[tempInt].ToString()) as StepSO;
 
-                    m_listHard.Remove(tempInt);
+                    m_listHard.Remove(m_listHard[tempInt]);
 
                     GameObject newQuestion = Instantiate(m_question);
 
