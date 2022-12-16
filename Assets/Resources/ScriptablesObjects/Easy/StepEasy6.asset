@@ -15,9 +15,9 @@ MonoBehaviour:
   Question: "L'Antarctique est situ\xE9e au"
   Responses:
   - responseString: Nord
-    isCorrect: 1
-  - responseString: Sud
     isCorrect: 0
+  - responseString: Sud
+    isCorrect: 1
   - responseString: Milieu
     isCorrect: 0
   StepDifficulty: 0

@@ -18,6 +18,6 @@ MonoBehaviour:
     isCorrect: 0
   - responseString: Descartes
     isCorrect: 1
-  - responseString: Kantes
+  - responseString: Kant
     isCorrect: 0
   StepDifficulty: 1

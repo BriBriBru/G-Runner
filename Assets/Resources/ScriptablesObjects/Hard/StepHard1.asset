@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepHard1
   m_EditorClassIdentifier: 
-  Question: "Probabilit\xE9 de faire deux 6 avec des d\xE9s"
+  Question: "Probabilit\xE9 de faire deux 6 avec deux d\xE9s"
   Responses:
   - responseString: 1/36
     isCorrect: 1

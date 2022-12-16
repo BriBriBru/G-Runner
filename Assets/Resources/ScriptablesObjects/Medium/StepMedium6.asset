@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Question: Le plus petit atome
   Responses:
-  - responseString: "h\xE9lium"
+  - responseString: "H\xE9lium"
     isCorrect: 0
-  - responseString: "hydrog\xE8ne"
+  - responseString: "Hydrog\xE8ne"
     isCorrect: 1
-  - responseString: neutron
+  - responseString: Neutron
     isCorrect: 0
   StepDifficulty: 1

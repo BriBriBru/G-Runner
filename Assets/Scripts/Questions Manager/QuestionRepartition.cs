@@ -1,26 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class QuestoinRepartition : MonoBehaviour
+public class QuestionRepartition : MonoBehaviour
 {
     [SerializeField] private GameObject m_answer1;
     [SerializeField] private GameObject m_answer2;
     [SerializeField] private GameObject m_answer3;
     public TextMeshProUGUI m_questionText;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void FillQuestion(StepSO answer)
     {

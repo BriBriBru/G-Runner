@@ -17,13 +17,12 @@ public class QuestionManager : MonoBehaviour
     void Start()
     {
         FillListOfQuestion();
-
         FillQuestion(Difficulty.easy);
     }
 
     public void FillQuestion(Difficulty difficulty)
     {
-        if(m_player.m_alive != false)
+        if (m_player.m_alive != false)
         {
             if (difficulty == Difficulty.easy)
             {
@@ -31,15 +30,15 @@ public class QuestionManager : MonoBehaviour
                 {
                     int tempInt = Random.Range(1, m_listEasy.Count);
 
-                    m_data = Resources.Load("ScriptablesObjects/Easy/StepEasy" + m_listEasy[tempInt].ToString()) as StepSO;
+                    m_data = Resources.Load("ScriptablesObjects/Easy/StepEasy" + m_listEasy[tempInt - 1].ToString()) as StepSO;
 
-                    m_listEasy.Remove(m_listEasy[tempInt]);
+                    m_listEasy.Remove(m_listEasy[tempInt - 1]);
 
                     GameObject newQuestion = Instantiate(m_question);
 
-                    newQuestion.GetComponent<QuestoinRepartition>().m_questionText = m_textForQuestion;
+                    newQuestion.GetComponent<QuestionRepartition>().m_questionText = m_textForQuestion;
 
-                    newQuestion.GetComponent<QuestoinRepartition>().FillQuestion(m_data);
+                    newQuestion.GetComponent<QuestionRepartition>().FillQuestion(m_data);
                 }
                 else
                 {
@@ -53,15 +52,15 @@ public class QuestionManager : MonoBehaviour
                 {
                     int tempInt = Random.Range(1, m_listMedium.Count);
 
-                    m_data = Resources.Load("ScriptablesObjects/Medium/StepMedium" + m_listMedium[tempInt].ToString()) as StepSO;
+                    m_data = Resources.Load("ScriptablesObjects/Medium/StepMedium" + m_listMedium[tempInt - 1].ToString()) as StepSO;
 
-                    m_listMedium.Remove(m_listMedium[tempInt]);
+                    m_listMedium.Remove(m_listMedium[tempInt - 1]);
 
                     GameObject newQuestion = Instantiate(m_question);
 
-                    newQuestion.GetComponent<QuestoinRepartition>().m_questionText = m_textForQuestion;
+                    newQuestion.GetComponent<QuestionRepartition>().m_questionText = m_textForQuestion;
 
-                    newQuestion.GetComponent<QuestoinRepartition>().FillQuestion(m_data);
+                    newQuestion.GetComponent<QuestionRepartition>().FillQuestion(m_data);
                 }
                 else
                 {
@@ -75,21 +74,20 @@ public class QuestionManager : MonoBehaviour
                 {
                     int tempInt = Random.Range(1, m_listHard.Count);
 
-                    m_data = Resources.Load("ScriptablesObjects/Hard/StepHard" + m_listHard[tempInt].ToString()) as StepSO;
+                    m_data = Resources.Load("ScriptablesObjects/Hard/StepHard" + m_listHard[tempInt - 1].ToString()) as StepSO;
 
-                    m_listHard.Remove(m_listHard[tempInt]);
+                    m_listHard.Remove(m_listHard[tempInt - 1]);
 
                     GameObject newQuestion = Instantiate(m_question);
 
-                    newQuestion.GetComponent<QuestoinRepartition>().m_questionText = m_textForQuestion;
+                    newQuestion.GetComponent<QuestionRepartition>().m_questionText = m_textForQuestion;
 
-                    newQuestion.GetComponent<QuestoinRepartition>().FillQuestion(m_data);
+                    newQuestion.GetComponent<QuestionRepartition>().FillQuestion(m_data);
                 }
                 else
                 {
                     m_finishCanvas.SetActive(true);
                     m_finishText.text = "You succeed all the question";
-                    
                 }
             }
         }
@@ -97,18 +95,10 @@ public class QuestionManager : MonoBehaviour
 
     public void FillListOfQuestion()
     {
-        for (int i = 0; i < 10/*Directory.GetFiles(Application.dataPath + "/Resources/ScriptablesObjects/Easy", "*.asset").Length*/; i++)
+        for (int i = 1; i < 11; i++)
         {
             m_listEasy.Add(i);
-        }
-
-        for (int i = 0; i < 10/*Directory.GetFiles(Application.dataPath + "/Resources/ScriptablesObjects/Medium", "*.asset").Length*/; i++)
-        {
             m_listMedium.Add(i);
-        }
-
-        for (int i = 0; i < 10/*Directory.GetFiles(Application.dataPath + "/Resources/ScriptablesObjects/Hard", "*.asset").Length*/; i++)
-        {
             m_listHard.Add(i);
         }
     }

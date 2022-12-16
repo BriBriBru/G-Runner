@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepMedium5
   m_EditorClassIdentifier: 
-  Question: "Quelle temp\xE9rature l'\xE9tat nous demande de mettre chez nous"
+  Question: "Quelle temp\xE9rature l'Etat nous demande de mettre chez nous"
   Responses:
   - responseString: 24
     isCorrect: 0

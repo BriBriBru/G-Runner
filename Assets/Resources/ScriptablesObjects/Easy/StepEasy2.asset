@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepEasy2
   m_EditorClassIdentifier: 
-  Question: "Nombre d'\xE9tats am\xE9ricain"
+  Question: "Nombre d'\xE9tats am\xE9ricains"
   Responses:
   - responseString: 50
     isCorrect: 1

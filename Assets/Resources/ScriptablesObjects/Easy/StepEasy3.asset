@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepEasy3
   m_EditorClassIdentifier: 
-  Question: "plan\xE8te entre V\xE9nus et Mars"
+  Question: "Plan\xE8te entre V\xE9nus et Mars"
   Responses:
   - responseString: Saturne
     isCorrect: 0

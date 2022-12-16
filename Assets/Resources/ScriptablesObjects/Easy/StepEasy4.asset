@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4d25269c8de154d80c5fa26df91497, type: 3}
   m_Name: StepEasy4
   m_EditorClassIdentifier: 
-  Question: Le roi soleil
+  Question: Le Roi Soleil
   Responses:
   - responseString: Louis XIV
     isCorrect: 1
