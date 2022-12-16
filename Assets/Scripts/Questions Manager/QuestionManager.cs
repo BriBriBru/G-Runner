@@ -31,7 +31,7 @@ public class QuestionManager : MonoBehaviour
                 {
                     int tempInt = Random.Range(1, m_listEasy.Count);
 
-                    m_data = Resources.Load("ScriptablesObjects/Easy/StepEasy" + tempInt.ToString()) as StepSO;
+                    m_data = Resources.Load("ScriptablesObjects/Easy/StepEasy" +  3.ToString()  /*tempInt.ToString()*/) as StepSO;
 
                     m_listEasy.Remove(tempInt);
 
