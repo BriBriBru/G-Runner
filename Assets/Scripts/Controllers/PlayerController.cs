@@ -1,19 +1,17 @@
 using UnityEngine;
 
-[System.Serializable]
-public enum SIDE
-{
-    LEFT,
-    MID,
-    RIGHT
-}
+public enum SIDE { LEFT, MID, RIGHT }
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Paths")]
     [SerializeField] private SIDE side = SIDE.MID;
     [SerializeField] private GameObject _leftPath;
     [SerializeField] private GameObject _middlePath;
     [SerializeField] private GameObject _rightPath;
+
+    [Header("Particle Effects")]
+    [SerializeField] private GameObject _instantMove;
 
     private Animator _animator;
     private Vector2 _startTouchPosition;
@@ -51,12 +49,14 @@ public class PlayerController : MonoBehaviour
                 {
                     side = SIDE.LEFT;
                     transform.position = _leftPathPos;
+                    LaunchParticleEffect();
                 }
 
                 else if (side == SIDE.RIGHT)
                 {
                     side = SIDE.MID;
                     transform.position = _middlePathPos;
+                    LaunchParticleEffect();
                 }
             }
 
@@ -67,16 +67,24 @@ public class PlayerController : MonoBehaviour
                 {
                     side = SIDE.RIGHT;
                     transform.position = _rightPathPos;
+                    LaunchParticleEffect();
                 }
 
                 else if (side == SIDE.LEFT)
                 {
                     side = SIDE.MID;
                     transform.position = _middlePathPos;
+                    LaunchParticleEffect();
                 }
             }
         }
 
         _animator.enabled = true;
+    }
+
+    private void LaunchParticleEffect()
+    {
+        GameObject swipeParticles = Instantiate(_instantMove, transform);
+        Destroy(swipeParticles, 5f);
     }
 }
