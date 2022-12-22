@@ -10,8 +10,6 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private List<int> m_listEasy;
     [SerializeField] private List<int> m_listMedium;
     [SerializeField] private List<int> m_listHard;
-    [SerializeField] private GameObject m_finishCanvas;
-    [SerializeField] private TextMeshProUGUI m_finishText;
     [SerializeField] private PlayerChooseAnswer m_player;
 
     void Start()
@@ -84,8 +82,7 @@ public class QuestionManager : MonoBehaviour
             }
             else
             {
-                m_finishCanvas.SetActive(true);
-                m_finishText.text = "You succeed all the question";
+                GameManager2.Instance.Victory();
             }
         }
     }
