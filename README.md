@@ -1,4 +1,4 @@
-# Maths-Runner
+# G-Runner
 
 Serious game sur mobile basé sur un runner qui permet d'enrichir sa culture générale.
 
