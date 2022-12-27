@@ -8,10 +8,12 @@ public class StepSO : ScriptableObject
     public List<Response> Responses;
     public Difficulty StepDifficulty;
 }
+
 [System.Serializable]
-public class Response{
+public class Response
+{
     public string responseString;
     public bool isCorrect;
 }
 
-public enum Difficulty{easy, medium, hard}
+public enum Difficulty { easy, medium, hard }
