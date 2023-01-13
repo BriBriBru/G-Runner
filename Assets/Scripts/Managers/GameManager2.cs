@@ -36,7 +36,7 @@ public class GameManager2 : Singleton<GameManager2>
         _gameOverScoreText.text = "Score : " + score.ToString();
 
         // Disable player to save ressources and avoid changing score
-        GameObject.Find("Player").SetActive(false);
+        DisablePlayer();
     }
 
     public void Victory()
@@ -47,9 +47,8 @@ public class GameManager2 : Singleton<GameManager2>
         // Display player score
         _victoryScoreText.text = "Score : " + score.ToString();
 
-        // Disable gameObjects for gameplay to save ressources
-        GameObject.Find("QuestionManager").SetActive(false);
-        GameObject.Find("Sceneries").SetActive(false);
+        // Disable player to save ressources and avoid changing score
+        DisablePlayer();
     }
 
     public void IncreaseScore()
@@ -65,5 +64,10 @@ public class GameManager2 : Singleton<GameManager2>
     public void ResetScore()
     {
         score = 0;
+    }
+
+    public void DisablePlayer()
+    {
+        GameObject.Find("Player").SetActive(false);
     }
 }
